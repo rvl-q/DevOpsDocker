@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 WORKDIR /usr/src/app
 
 # install curl
-# Does not work behind VPN, I have run with --net host dor this.
+# Does not work behind VPN, I have run with --net host for this.
 RUN apt-get update
 RUN apt-get -y install curl    
 
