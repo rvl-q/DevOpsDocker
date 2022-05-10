@@ -1,0 +1,39 @@
+^Crvl@eb: part1 $ docker run --rm -it devopsdockeruh/simple-web-service:ubuntu
+Unable to find image 'devopsdockeruh/simple-web-service:ubuntu' locally
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+5d3b2c2d21bb: Pull complete 
+3fc2062ea667: Pull complete 
+75adf526d75b: Pull complete 
+965d4bbb586a: Pull complete 
+4f4fb700ef54: Pull complete 
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:ubuntu
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+
+
+
+rvl@EB8560w20:~$ docker ps -a
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+5863bc30577c   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   3 minutes ago   Up 3 minutes             practical_vaughan
+rvl@EB8560w20:~$ docker exec -it 58 bash
+root@5863bc30577c:/usr/src/app# ls
+server  text.log
+root@5863bc30577c:/usr/src/app# tail -f ./text.log
+2022-05-10 12:36:08 +0000 UTC
+2022-05-10 12:36:10 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-05-10 12:36:12 +0000 UTC
+2022-05-10 12:36:14 +0000 UTC
+2022-05-10 12:36:16 +0000 UTC
+2022-05-10 12:36:18 +0000 UTC
+2022-05-10 12:36:20 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-05-10 12:36:22 +0000 UTC
+2022-05-10 12:36:24 +0000 UTC
+2022-05-10 12:36:26 +0000 UTC
+2022-05-10 12:36:28 +0000 UTC
+^C
+root@5863bc30577c:/usr/src/app# 
