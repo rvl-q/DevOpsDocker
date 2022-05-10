@@ -1,0 +1,18 @@
+rvl@eb: part1 $ docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+nginx        latest    fa5269854a5e   2 weeks ago   142MB
+rvl@eb: part1 $ docker rmi f
+Untagged: nginx:latest
+Untagged: nginx@sha256:859ab6768a6f26a79bc42b231664111317d095a4f04e4b6fe79ce37b3d199097
+Deleted: sha256:fa5269854a5e615e51a72b17ad3fd1e01268f278a6684c8ed3c5f0cdce3f230b
+Deleted: sha256:5a730c5c122e844d0933a20b7b2fda1fc3bd33987869dbd2b59396d80b0bcfca
+Deleted: sha256:1c253cdf8e00753daf0cc7ce52d6e6371a1679db912912e6e854dd09ba8b4e97
+Deleted: sha256:532887908ca58c17ffd4946a51bfa01dc897f4ebf25f69fc149736f4fd6e8366
+Deleted: sha256:1c4fd4da0a6c4dec7037b57b8b24ca6a346209983cbe63264afe4e724a8a9976
+Deleted: sha256:186315e6b3b440e7935f059ccdaea035e03ccdb3133bc87055a299469d51717c
+Deleted: sha256:9c1b6dd6c1e6be9fdd2b1987783824670d3b0dd7ae8ad6f57dc3cea5739ac71e
+rvl@eb: part1 $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+rvl@eb: part1 $ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+rvl@eb: part1 $ 
