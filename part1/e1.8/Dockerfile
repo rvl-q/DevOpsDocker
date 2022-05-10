@@ -12,8 +12,9 @@ RUN apt-get -y install curl
 COPY curler.sh .
 
 # When running docker run the command will be "curler"
-CMD ./curler.sh
+# CMD ./curler.sh
+ENTRYPOINT [ "./curler.sh" ]
 
 # build:
-# docker build --network host . -t curler
+# docker build --network host . -t curler-v2
 # To work behind VPN, option: --network host
