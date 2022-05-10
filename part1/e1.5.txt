@@ -1,0 +1,31 @@
+rvl@eb: part1 docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   14 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   14 months ago   15.7MB
+rvl@eb: part1 $ 
+
+Alpine is much smaller!
+
+
+rvl@eb: part1 $ docker run --net host --rm -it devopsdockeruh/simple-web-service:alpine
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+
+
+rvl@EB8560w20:~$ docker ps -a
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+c4c9133d6e4e   devopsdockeruh/simple-web-service:alpine   "/usr/src/app/server"   9 seconds ago   Up 8 seconds             stupefied_euclid
+rvl@EB8560w20:~$ docker exec -it c4 sh
+/usr/src/app # tail -f ./text.log
+2022-05-10 15:16:41 +0000 UTC
+2022-05-10 15:16:43 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-05-10 15:16:45 +0000 UTC
+2022-05-10 15:16:47 +0000 UTC
+2022-05-10 15:16:49 +0000 UTC
+2022-05-10 15:16:51 +0000 UTC
+2022-05-10 15:16:53 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-05-10 15:16:55 +0000 UTC
