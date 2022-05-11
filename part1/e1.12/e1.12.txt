@@ -1,0 +1,32 @@
+rvl@eb: example-frontend $ docker build . -t front12
+Sending build context to Docker daemon  729.6kB
+Step 1/8 : FROM node:lts
+ ---> 5f9d246cdc07
+Step 2/8 : EXPOSE 5000
+ ---> Using cache
+ ---> d922b14f4d79
+Step 3/8 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> 6d2e84605a19
+Step 4/8 : COPY . .
+ ---> Using cache
+ ---> c5f8dd229425
+Step 5/8 : RUN npm install
+ ---> Running in f2cd947cfe76
+npm WARN old lockfile 
+
+...
+
+Successfully built 73a67d00ca00
+Successfully tagged front12:latest
+rvl@eb: example-frontend $ 
+
+
+
+rvl@eb: e1.12 $ docker run -p 5000:5000 front12
+INFO: Accepting connections at http://localhost:5000
+
+
+
+Part 1
+Exercise 1.12: Congratulations! You configured your ports correctly!
