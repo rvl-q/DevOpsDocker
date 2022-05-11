@@ -9,3 +9,28 @@ INFO: Accepting connections at http://localhost:5000
 
 
 
+rvl@eb: back $ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+548713d96368   front14   "docker-entrypoint.s…"   16 minutes ago   Up 9 minutes    0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   vibrant_leavitt
+98692d486eeb   back13    "./server"               2 hours ago      Up 39 minutes   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   affectionate_volhard
+rvl@eb: back $ docker stop 98
+98
+rvl@eb: back $ docker run -p 8080:8080 back14
+[Ex 2.4+] REDIS_HOST env was not passed so redis connection is not initialized
+[Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+[GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+[GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/05/11 - 20:53:09 | 200 |      46.951µs |      172.17.0.1 | GET      "/ping"
+
+
+
+Exercise 1.14: 
+Success! Great job!
