@@ -10,14 +10,14 @@ WORKDIR /usr/src/app
 # Copy all of the source code
 COPY . .
 
+# ??? REQUEST_ORIGIN https://example.com
+ENV REQUEST_ORIGIN=http://127.0.0.1:5000
+
 # Build
 RUN go build
 
 # Test
 # RUN go test ./...
-
-# ??? REQUEST_ORIGIN https://example.com
-ENV REQUEST_ORIGIN=http://127.0.0.1:5000
 
 # And finally the command to run the application
 CMD ["./server"]
