@@ -1,0 +1,16 @@
+rvl@eb: e1.9 $ ls
+log
+rvl@eb: e1.9 $ ls log
+rvl@eb: e1.9 $ touch log/text.log
+rvl@eb: e1.9 $ docker run -d -v "$(pwd)/log/text.log://usr/src/app/text.log" devopsdockeruh/simple-web-service
+2391ead795523f1d14e25c326fbeca04ea4d7e4167424c56f8701416e4bdeea5
+rvl@eb: e1.9 $ tail log/text.log
+2022-05-11 09:33:50 +0000 UTC
+2022-05-11 09:33:52 +0000 UTC
+2022-05-11 09:33:54 +0000 UTC
+2022-05-11 09:33:56 +0000 UTC
+2022-05-11 09:33:58 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-05-11 09:34:00 +0000 UTC
+2022-05-11 09:34:02 +0000 UTC
+rvl@eb: e1.9 $ 
