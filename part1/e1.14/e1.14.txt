@@ -1,0 +1,11 @@
+rvl@eb: e1.14 $ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED             STATUS          PORTS                                       NAMES
+98692d486eeb   back13    "./server"               About an hour ago   Up 21 minutes   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   affectionate_volhard
+ff9a279b8819   front12   "docker-entrypoint.s…"   2 hours ago         Up 2 hours      0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   dazzling_sutherland
+rvl@eb: e1.14 $ docker stop ff
+ff
+rvl@eb: e1.14 $ docker run -p 5000:5000 front14
+INFO: Accepting connections at http://localhost:5000
+
+
+
