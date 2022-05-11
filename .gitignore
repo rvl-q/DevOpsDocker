@@ -4,3 +4,7 @@ part1/part1
 part1/e1.9/log/**
 part1/e1.11/.mvn/**
 part1/e1.11/src/**
+part1/e1.11/pom.xml
+part1/e1.11/mvnm
+part1/e1.11/mvnm.cmd
+
