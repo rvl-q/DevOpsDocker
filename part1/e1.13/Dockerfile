@@ -1,7 +1,7 @@
 # We need golang 1.16
 FROM golang:1.16
 
-# serve to serve the project in port 5000
+# serve to serve the project in port 8080
 EXPOSE 8080
 
 WORKDIR /usr/src/app
