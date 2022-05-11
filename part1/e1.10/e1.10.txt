@@ -1,0 +1,29 @@
+rvl@eb: ~ $ docker run -p 127.0.0.1:1337:8080 web-server
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/05/11 - 15:00:22 | 200 |      52.764µs |      172.17.0.1 | GET      "/"
+[GIN] 2022/05/11 - 15:01:13 | 200 |      47.404µs |      172.17.0.1 | GET      "/"
+[GIN] 2022/05/11 - 15:01:14 | 200 |      44.755µs |      172.17.0.1 | GET      "/favicon.ico"
+[GIN] 2022/05/11 - 15:01:32 | 200 |     235.521µs |      172.17.0.1 | GET      "/"
+^Crvl@eb: ~ $ 
+
+
+
+rvl@eb: e1.10 $ wget 127.0.0.1:1337
+--2022-05-11 18:01:32--  http://127.0.0.1:1337/
+Connecting to 127.0.0.1:1337... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 63 [application/json]
+Saving to: ‘index.html’
+
+index.html                         100%[===============================================================>]      63  --.-KB/s    in 0s      
+
+2022-05-11 18:01:32 (1,25 MB/s) - ‘index.html’ saved [63/63]
+
+rvl@eb: e1.10 $ 
