@@ -1,0 +1,8 @@
+rvl@eb: scaling-exercise $ docker-compose up -d --scale compute=3
+Creating network "scaling-exercise_default" with the default driver
+Creating scaling-exercise_compute_1 ... done
+Creating scaling-exercise_compute_2 ... done
+Creating scaling-exercise_compute_3 ... done
+Creating calculator                 ... done
+Creating load-balancer              ... done
+rvl@eb: scaling-exercise $ 
