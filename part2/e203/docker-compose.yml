@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+    front203:
+      image: front14
+      ports:
+        - 5000:5000
+
+    back203:
+      image: back14
+      ports:
+        - 8080:8080
+
