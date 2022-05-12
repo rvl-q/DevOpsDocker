@@ -1,3 +1,5 @@
+# e1.14 hard linked to e1.12
+
 # We need node
 FROM node:lts
 # the hard way then... (?)
@@ -17,6 +19,8 @@ WORKDIR /usr/src/app
 # Copy all of the source code
 COPY . .
 
+# REACT_APP_BACKEND_URL=http://example.com
+ENV REACT_APP_BACKEND_URL=http://127.0.0.1:8080
 # Install... (copy before install)
 RUN npm install
 # Build...
