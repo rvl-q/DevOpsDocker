@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+    front206:
+      image: front14
+      ports:
+        - 5000:5000
+
+    back206:
+      image: back14
+      ports:
+        - 8080:8080
+      environment:
+        - REDIS_HOST=redis
+        - POSTGRES_HOST=db
+        - POSTGRES_PASSWORD=example
+        - POSTGRES_DATABASE=postgres
+        # no whitespace
+
+    db:
+      image: postgres:13.2-alpine
+      restart: unless-stopped
+      environment:
+        POSTGRES_PASSWORD: example
+      container_name: db_pgsql
+
+
+    redis:
+      image: redis:6-alpine
+      restart: unless-stopped
+      # no ports!
+
