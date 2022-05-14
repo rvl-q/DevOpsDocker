@@ -11,7 +11,8 @@ services:
       ports:
         - 8080:8080
       environment:
-        - REQUEST_ORIGIN=http://localhost:5000
+        - REQUEST_ORIGIN=http://127.0.0.1:5000
+        #- REQUEST_ORIGIN=http://localhost:5000 # din NOT work!
         - REDIS_HOST=redis
         - POSTGRES_HOST=db
         - POSTGRES_PASSWORD=example
