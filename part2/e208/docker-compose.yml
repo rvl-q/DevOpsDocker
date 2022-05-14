@@ -24,9 +24,9 @@ services:
       POSTGRES_PASSWORD: example
     container_name: db_pgsql
 
-    redis:
-      image: redis:6-alpine
-      restart: unless-stopped
+  redis:
+    image: redis:6-alpine
+    restart: unless-stopped
 
   nginx:
     image: nginx:alpine
