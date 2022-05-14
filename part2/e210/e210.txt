@@ -1,0 +1,18 @@
+Everything worked before, but it felt a bit cheating to expose the backend.
+Now port also port 8080 goes through the ngnix proxy.
+
+Maiin additions:
+ngnix.conf:
+  server {
+    listen 8080;
+
+    location / {
+      proxy_pass http://back208:8080/;
+    }
+
+docker-compose.yml:
+  nginx:
+...
+    ports:
+...
+      - 8080:8080 # accordingly removed from the backend

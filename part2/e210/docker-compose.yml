@@ -12,6 +12,7 @@ services:
     #   - 8080:8080
     environment:
       - REQUEST_ORIGIN=http://127.0.0.1
+      #- REQUEST_ORIGIN=http://localhost/
       - REDIS_HOST=redis
       - POSTGRES_HOST=db
       - POSTGRES_PASSWORD=example
@@ -23,6 +24,8 @@ services:
     environment:
       POSTGRES_PASSWORD: example
     container_name: db_pgsql
+    volumes:
+      - ./database/pg:/var/lib/postgresql/data
 
   redis:
     image: redis:6-alpine
@@ -34,6 +37,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
+      - 8080:8080
 
 
 
