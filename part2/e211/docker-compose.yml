@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+
+    kernel-build-test:
+      image: rvlq/410-kernel-image:qcomlt-4.14
+      build: .
+      volumes:
+        - ./boot-db410c.img:/src/kernel/boot-db410c.img
+      container_name: DragonBoard410cImage
+      entrypoint: ['abootimg', '--create', 'boot-db410c.img', '-k', 'Image.gz+dtb', '-r', 'ramdisk.img', '-c', 'pagesize=2048', '-c', 'kerneladdr=0x80008000', '-c', 'ramdiskaddr=0x81000000', '-c', 'cmdline="root=/dev/mmcblk0p10 rw rootwait console=tty0 console=ttyMSM0,115200n8"']
+
+volumes: 
+  boot-db410c.img:
+
+# RUN abootimg --create boot-db410c.img -k Image.gz+dtb -r ramdisk.img \
+#            -c pagesize=2048 -c kerneladdr=0x80008000 -c ramdiskaddr=0x81000000 \
+#            -c cmdline="root=/dev/mmcblk0p10 rw rootwait console=tty0 console=ttyMSM0,115200n8"
