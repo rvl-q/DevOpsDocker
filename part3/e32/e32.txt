@@ -1,0 +1,170 @@
+rvl@eb: e32 $ 
+rvl@eb: e32 $ ls -l
+total 16
+-rwxrwxr-x 1 rvl rvl 882 touko  17 17:33 container_builder.sh
+-rw-rw-r-- 1 rvl rvl 138 touko  17 17:32 Dockerfile
+-rwxrwxr-x 1 rvl rvl 802 touko  17 17:33 git2dock.sh
+-rwxrwxr-x 1 rvl rvl 121 touko  17 17:33 setup.sh
+rvl@eb: e32 $ ./setup.sh 
+Sending build context to Docker daemon  6.144kB
+Step 1/7 : FROM docker:git
+ ---> 72a153898ad6
+Step 2/7 : WORKDIR /usr/app
+ ---> Running in 89c19205cef5
+Removing intermediate container 89c19205cef5
+ ---> 0eab0cc46975
+Step 3/7 : COPY container_builder.sh .
+ ---> c3095ca9661c
+Step 4/7 : ENV GIT_REPO=
+ ---> Running in 27929cf50841
+Removing intermediate container 27929cf50841
+ ---> c60b841c8e37
+Step 5/7 : ENV D_USER=
+ ---> Running in 1ed6417cd0b9
+Removing intermediate container 1ed6417cd0b9
+ ---> f36d30f79cd8
+Step 6/7 : ENV D_TAG=
+ ---> Running in 652e4f1e5d45
+Removing intermediate container 652e4f1e5d45
+ ---> 14a9cad93de4
+Step 7/7 : CMD [ "sh", "container_builder.sh" ]
+ ---> Running in 8b4fee2223df
+Removing intermediate container 8b4fee2223df
+ ---> 7af12b9838a7
+Successfully built 7af12b9838a7
+Successfully tagged container-32-builder:latest
+
+
+
+rvl@eb: e32 $ ./git2dock.sh rvl-q/hello-world hello-world
+git url is: https://github.com/rvl-q/hello-world.git
+your docker username is: rvlq
+the full docker tag is: rvlq/hello-world
+
+hello from container builder
+
+git url is: https://github.com/rvl-q/hello-world.git
+your docker username is: rvlq
+the full docker tag is: rvlq/hello-world
+
+starting build in 5 s ...maybe less
+hit ctrl-c if something is wrong
+Cloning into 'hello-world'...
+Sending build context to Docker daemon  55.81kB
+Step 1/4 : FROM alpine:latest
+ ---> 0ac33e5f5afa
+Step 2/4 : WORKDIR /usr/src/app
+ ---> Running in 39c360fb7204
+Removing intermediate container 39c360fb7204
+ ---> 723894349ebb
+Step 3/4 : COPY hello-world.sh .
+ ---> 84a6a32d16eb
+Step 4/4 : CMD ./hello-world.sh
+ ---> Running in 4d0a8dd5b6b9
+Removing intermediate container 4d0a8dd5b6b9
+ ---> 86b68b7390ea
+Successfully built 86b68b7390ea
+Successfully tagged rvlq/hello-world:latest
+Authenticating with existing credentials...
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+Using default tag: latest
+The push refers to repository [docker.io/rvlq/hello-world]
+6de6898a70d2: Preparing
+fec94e9aa56d: Preparing
+4fc242d58285: Preparing
+4fc242d58285: Layer already exists
+6de6898a70d2: Pushed
+fec94e9aa56d: Pushed
+latest: digest: sha256:d04ea96c56459607f9de549a39c7851b66a77cb5d71e056a553b668ecdecc914 size: 942
+rvl@eb: e32 $ 
+
+
+
+...
+
+
+
+rvl@eb: e32 $ 
+rvl@eb: e32 $ ./git2dock.sh docker-hy/ml-kurkkumopo-frontend kurkkumopo-frontti
+git url is: https://github.com/docker-hy/ml-kurkkumopo-frontend.git
+your docker username is: rvlq
+the full docker tag is: rvlq/kurkkumopo-frontti
+
+hello from container builder
+
+git url is: https://github.com/docker-hy/ml-kurkkumopo-frontend.git
+your docker username is: rvlq
+the full docker tag is: rvlq/kurkkumopo-frontti
+
+starting build in 5 s ...maybe less
+hit ctrl-c if something is wrong
+Cloning into 'ml-kurkkumopo-frontend'...
+Sending build context to Docker daemon  2.094MB
+Step 1/8 : FROM node:12.16.2
+ ---> e764fa94bbf7
+Step 2/8 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> 15037535c150
+Step 3/8 : COPY . .
+ ---> d4aff8326972
+Step 4/8 : RUN npm ci
+ ---> Running in 3ffe3602c76f
+
+...
+
+Step 8/8 : CMD ["serve", "-s", "-l", "3000", "build"]
+ ---> Running in 89a65e0c6f87
+Removing intermediate container 89a65e0c6f87
+ ---> 839e13f64d9d
+Successfully built 839e13f64d9d
+Successfully tagged rvlq/kurkkumopo-frontti:latest
+Authenticating with existing credentials...
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+Using default tag: latest
+The push refers to repository [docker.io/rvlq/kurkkumopo-frontti]
+5292e7f187ab: Preparing
+c2e7cabeb2c4: Preparing
+19e65353504c: Preparing
+436234f7ecfe: Preparing
+a86952478221: Preparing
+510905aa2c4f: Preparing
+c410d29eb655: Preparing
+749990a4cdcb: Preparing
+496d6557f1e3: Preparing
+867786449541: Preparing
+92d17ee6d9da: Preparing
+e54368741774: Preparing
+5a6c4d956b5d: Preparing
+86ab2c6c5d58: Preparing
+496d6557f1e3: Waiting
+867786449541: Waiting
+92d17ee6d9da: Waiting
+86ab2c6c5d58: Waiting
+e54368741774: Waiting
+5a6c4d956b5d: Waiting
+510905aa2c4f: Waiting
+c410d29eb655: Waiting
+a86952478221: Layer already exists
+510905aa2c4f: Layer already exists
+c410d29eb655: Layer already exists
+749990a4cdcb: Layer already exists
+496d6557f1e3: Layer already exists
+867786449541: Layer already exists
+92d17ee6d9da: Layer already exists
+e54368741774: Layer already exists
+c2e7cabeb2c4: Pushed
+5a6c4d956b5d: Layer already exists
+86ab2c6c5d58: Layer already exists
+436234f7ecfe: Pushed
+5292e7f187ab: Pushed
+19e65353504c: Pushed
+latest: digest: sha256:6490c87c1e0397a5d45e677c3b22707cca3c015bb5207d126fb9255f467e7cb0 size: 3267
+rvl@eb: e32 $ 
