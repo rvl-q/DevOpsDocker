@@ -1,4 +1,4 @@
-# e1.14 hard linked to e1.12
+# e3.3, e1.14 hard linked to e1.12
 
 # We need node
 FROM node:lts
@@ -18,6 +18,11 @@ WORKDIR /usr/src/app
 
 # Copy all of the source code
 COPY . .
+
+# e33 additions
+RUN  useradd -m appuser
+RUN chown -fR appuser .
+USER appuser
 
 # REACT_APP_BACKEND_URL=http://example.com
 ENV REACT_APP_BACKEND_URL=http://127.0.0.1:8080
