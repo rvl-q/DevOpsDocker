@@ -1,0 +1,7 @@
+Baseline(before):
+
+rvl@eb: e34 $ docker images
+REPOSITORY                                        TAG            IMAGE ID       CREATED          SIZE
+back34                                            latest         1fd4c283cec4   46 minutes ago   1.07GB
+front34                                           latest         f8da9107692e   51 minutes ago   1.23GB
+
