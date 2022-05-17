@@ -10,6 +10,11 @@ WORKDIR /usr/src/app
 # Copy all of the source code
 COPY . .
 
+# e33 additions
+RUN  useradd -m appuser
+RUN chown -fR appuser .
+USER appuser
+
 # ??? REQUEST_ORIGIN https://example.com
 ENV REQUEST_ORIGIN=http://127.0.0.1:5000
 
