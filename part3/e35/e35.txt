@@ -1,0 +1,9 @@
+Sizes before (=after 3.4)
+
+rvl@eb: e35 $ docker images
+REPOSITORY                TAG           IMAGE ID       CREATED             SIZE                                                                                            
+front3-456                latest        08b96c512ba2   54 seconds ago      545MB                                                                                           
+back3-456                 latest        915c170c4382   2 minutes ago       602MB                                                                                           
+
+after:
+
