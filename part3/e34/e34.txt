@@ -7,8 +7,16 @@ front34                                           latest         f8da9107692e   
 
 Base was supposed to be ubuntu:18.04, rebased here:
 
-rvl@eb: example-backend $ docker images
+rvl@eb: e34 $ docker images
 REPOSITORY                TAG           IMAGE ID       CREATED              SIZE
 back3-456                 latest        5cf5ab30ce56   About a minute ago   773MB
 front3-456                latest        3c42ab9791ad   35 minutes ago       592MB
 
+After joining and purging
+
+rvl@eb: e34 $ docker images                                                                                                                                         
+REPOSITORY                TAG           IMAGE ID       CREATED             SIZE                                                                                            
+front3-456                latest        197e6e03a729   28 seconds ago      545MB
+back3-456                 latest        a70bdf23664e   7 minutes ago       602MB
+
+Not quite "432MB / 351MB", but maybe a good enough change, as we have better size optimisations ahead.
