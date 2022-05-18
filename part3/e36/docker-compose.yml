@@ -6,6 +6,8 @@ services:
     build: "${MATERIAL_APPLICATIONS}/example-frontend"
     # ports:
     #   - 5000:5000
+    environment:
+      - REACT_APP_BACKEND_URL=http://127.0.0.1:8080
 
   back304:
     image: back3-456
