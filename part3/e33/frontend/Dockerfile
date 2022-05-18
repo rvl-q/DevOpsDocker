@@ -19,11 +19,6 @@ WORKDIR /usr/src/app
 # Copy all of the source code
 COPY . .
 
-# e33 additions
-RUN  useradd -m appuser
-RUN chown -fR appuser .
-USER appuser
-
 # REACT_APP_BACKEND_URL=http://example.com
 ENV REACT_APP_BACKEND_URL=http://127.0.0.1:8080
 # Install... (copy before install)
@@ -31,6 +26,11 @@ RUN npm install
 # Build...
 RUN npm run build
 RUN npm install -g serve
+
+# e33 additions
+RUN  useradd -m appuser
+# RUN chown -fR appuser .
+USER appuser
 
 # And finally the command to run the application
 CMD ["serve", "-s", "-l", "5000", "build"]
