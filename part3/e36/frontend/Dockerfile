@@ -13,13 +13,11 @@ WORKDIR /usr/src/app
 # Copy all of the source code
 COPY . .
 
-# RUN apt-get update && apt-get install -y curl && \
-#     curl -sL https://deb.nodesource.com/setup_16.x | bash && \
-#     apt install -y nodejs && \
-RUN npm install && \
+RUN apt-get update && \
+    apt install -y nodejs && \
+    npm install && \
     npm run build && \
     npm install -g serve && \
-    apt-get purge -y --auto-remove curl && \
     rm -rf /var/lib/apt/lists/* && \
     useradd -m appuser
 
