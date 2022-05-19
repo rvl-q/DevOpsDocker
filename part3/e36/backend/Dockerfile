@@ -4,7 +4,7 @@
 # switch to FROM ubuntu:18.04 first
 # FROM ubuntu:18.04
 # e3.5
-# >25M ok
+# <25M ok
 # e3.6
 FROM golang:1.16-alpine as build-stage
 
