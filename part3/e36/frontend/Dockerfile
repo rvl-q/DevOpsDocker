@@ -4,7 +4,7 @@
 # node ... alpine
 
 # FROM ubuntu:18.04
-# FROM node:alpine
+#FROM node:18-alpine
 FROM alpine:3.13
 # serve to serve the project in port 5000
 EXPOSE 5000
@@ -23,10 +23,12 @@ COPY . .
 #     useradd -m appuser
 
 #RUN apt-get update && \
-RUN apk add --no-cache nodejs npm && \
-    npm install && \
-    npm run build && \
-    npm install -g serve && \
+#apk add --no-cache curl python3 ca-certificates && \
+RUN apk update && apk add --no-cache nodejs npm ca-certificates && \
+    rm -rf node_modules package-lock.json && npm install
+    #npm install
+RUN    npm run build
+RUN    npm install -g serve && \
     adduser -D appuser
 
 # RUN apk add --no-cache curl python3 ca-certificates && \
