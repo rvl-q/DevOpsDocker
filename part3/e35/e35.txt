@@ -7,3 +7,7 @@ back3-456                 latest        915c170c4382   2 minutes ago       602MB
 
 after:
 
+rvl@eb: e36 $ docker images
+REPOSITORY                TAG           IMAGE ID       CREATED              SIZE                                                                                           
+front3-456                latest        51091a0dbf95   27 seconds ago       288MB                                                                                          
+back3-456                 latest        66ab6f399b5c   About a minute ago   447MB                                                                                          
