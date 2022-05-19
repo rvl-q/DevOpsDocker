@@ -4,7 +4,9 @@
 # switch to FROM ubuntu:18.04 first
 # FROM ubuntu:18.04
 # e3.5
-FROM golang:1.16-alpine
+#
+# e3.6
+FROM golang:1.16-alpine as build-stage
 
 # serve to serve the project in port 8080
 EXPOSE 8080
@@ -15,6 +17,9 @@ ENV PATH=$PATH:/usr/local/go/bin
 
 # Copy all of the source code
 COPY . .
+
+RUN go build
+# It will generate a binary named "server"
 
 # We need golang 1.16
 # https://go.dev/dl/go1.16.15.linux-amd64.tar.gz
@@ -30,8 +35,12 @@ COPY . .
 #     rm -rf /var/lib/apt/lists/* && \
 #     useradd -m appuser
 
+FROM alpine
+
+COPY --from=build-stage /usr/src/app/server /app/
+WORKDIR /app
+
 RUN apk update && \
-    go build && \
     rm -rf /var/cache/apk/* && \
     adduser -D appuser
 
