@@ -13,7 +13,7 @@ ytdl                      alpine        2c3b445c1f5c   11 minutes ago   51.6MB
 ```
 The third image was from alpine version 3.13 and slightly smalller than 3.15.4, that currently is "latest".
 
-Neither Alpine image shows any known vulnerability issues in Snyk scan, but the Ubuntu one had 16.
+Neither Alpine image shows any known vulnerability issues in Snyk scan, but the Ubuntu one had 16. Ubuntu 20.04 would only be marginally better and probably a bit larger.
 
 ```
 Package manager:   deb
