@@ -21,16 +21,16 @@ COPY . .
 RUN go build
 # It will generate a binary named "server"
 
-FROM alpine
+# https://feldspaten.org/2021/05/22/Tiny-Containers/
+# 13 MB!
+# RUN apk update && apk add build-base
+# RUN cd /app && CGO_ENABLED=0 go build -ldflags="-w -s"
 
-COPY --from=build-stage /usr/src/app/server /app/
-WORKDIR /app
+#USER appuser
 
-RUN apk update && \
-    rm -rf /var/cache/apk/* && \
-    adduser -D appuser
-
-USER appuser
+FROM scratch
+COPY --from=build-stage /usr/src/app/server /app/server
 
 # And finally the command to run the application
-CMD ["./server"]
+# CMD ["/app/server"]
+ENTRYPOINT ["/app/server"]
