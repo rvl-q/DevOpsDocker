@@ -1,5 +1,12 @@
+backend FROM alpine:
 rvl@eb: e36 $ docker images
 REPOSITORY                TAG           IMAGE ID       CREATED              SIZE                                                                                           
 front3-456                latest        631f981f4fb8   10 seconds ago       63.8MB                                                                                         
 back3-456                 latest        fd3501108d91   About a minute ago   23.7MB                                                                                         
 
+
+backend FROM scratch:
+rvl@eb: e36 $ docker images
+REPOSITORY                TAG           IMAGE ID       CREATED             SIZE
+back3-456                 latest        db99f9715813   2 minutes ago       13.1MB
+front3-456                latest        1f2b27cfcaed   2 minutes ago       63.8MB
