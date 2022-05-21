@@ -47,8 +47,11 @@ COPY . /app
 RUN apk update && apk add build-base
 RUN CGO_ENABLED=0 go build -ldflags="-w -s"
 # -o server
+RUN adduser -D --uid 12345 appuser
 
 FROM scratch
 WORKDIR /app
 COPY --from=build /app/server /app/server
+COPY --from=build /etc/passwd /etc/passwd
+USER appuser
 ENTRYPOINT ["/app/server"]

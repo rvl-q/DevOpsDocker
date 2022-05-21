@@ -10,3 +10,9 @@ rvl@eb: e36 $ docker images
 REPOSITORY                TAG           IMAGE ID       CREATED             SIZE
 back3-456                 latest        db99f9715813   2 minutes ago       13.1MB
 front3-456                latest        1f2b27cfcaed   2 minutes ago       63.8MB
+
+
+rvl@eb: material-applications $ ps -u 12345 u
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+12345     544600  0.0  0.0 717748 13452 ?        Ssl  09:08   0:00 /app/server
+rvl@eb: material-applications $ 
